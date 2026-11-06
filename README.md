@@ -1,4 +1,5 @@
 # Wind–hydrogen foresight models
+  [![DOI](https://zenodo.org/badge/1448321011.svg)](https://doi.org/10.5281/zenodo.24013663)
 
 Optimization models used in the article
 
@@ -107,9 +108,11 @@ seconds.
 
 ## Citation
 
-If you use this code, please cite the article above and this software
-(see `CITATION.cff`; the archived version has the DOI
-[10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)). <!-- TODO -->
+  ## Citation
+
+  If you use this code, please cite the article above and this software.
+  The version used for the results in the article is v1.0.0,
+  [doi:10.5281/zenodo.24013664](https://doi.org/10.5281/zenodo.24013664).
 
 ## Licence
 
