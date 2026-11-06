@@ -1,0 +1,13 @@
+# Input data: only the synthetic example may be published.
+# The measured wind farm data are confidential - never commit them.
+data/*
+!data/example_timeseries.csv
+*.xlsx
+*.xls
+
+# Results, logs and caches
+results/
+*.log
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

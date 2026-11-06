@@ -1,0 +1,48 @@
+# Model parameters of the paper (Table 1, Sections 2.2-2.4 and 3.1).
+# All hydrogen quantities in MWh based on the lower heating value (LHV);
+# 1 t H2 = 33.3 MWh. Symbols in brackets refer to the paper.
+
+[electricity]
+grid_fee = 10.0              # [PG] grid fee for feeding in electricity, EUR/MWh_el
+
+[hydrogen]
+price = 180.1801801801802                 # [PH] hydrogen selling price, EUR/MWh_H2 (6 EUR/kg)
+shortfall_penalty = 360.3603603603604      # [SP] penalty per MWh_H2 below the minimum delivery (12 EUR/kg)
+min_delivery = 1.0      # minimum daily delivery of the purchase agreement, t/d
+initial_storage = 0.0   # [hs_0] storage level at the start of the year, MWh_H2
+final_storage = 0.0       # storage level at the end of the year (strategic model), MWh_H2
+
+[electrolyzer]                      # PEM, one unit = 1 MW electrical input
+capacity = 1.0               # [EC] MW_el per unit
+efficiency = 0.6             # [EE] MWh_H2 per MWh_el (LHV)
+hourly_cost = 19.67           # [EP] EUR/h per unit, Eq. (1) incl. stack replacements
+
+[compressor]                        # 30 -> 250 bar, two stages, see compressor_energy.py
+capacity = 1.0              # [CC] MWh_H2/h per unit (about 30 kg/h)
+specific_energy_kWh_per_MWh = 35.15   # [CE] kWh_el per MWh_H2 compressed
+hourly_cost = 0.87          # [CP] EUR/h per unit, Eq. (1)
+
+[storage]                           # Type 1 pressure vessels, 250 bar
+capacity = 1.0              # [HSC] MWh_H2 per unit (about 30 kg)
+hourly_cost = 0.14          # [HSP] EUR/h per unit, Eq. (1)
+
+[fuel_cell]                         # one unit = 0.5 MW electrical output
+capacity = 1.0                # [FC] MWh_H2/h hydrogen input per unit
+efficiency = 0.5              # [FE] MWh_el per MWh_H2 (LHV)
+hourly_cost = 14.15            # [FP] EUR/h per unit, Eq. (1)
+
+[scenarios]
+# Maximum daily delivery of the purchase agreement in t/d (Table 2); inf = no upper limit.
+max_delivery = [2.0, 4.0, 6.0, inf]
+
+[tactical]
+# Foresight horizons L (block lengths) in hours.
+horizons = [1, 2, 4, 6, 8, 12, 24, 48, 72, 120, 168, 336, 672, 1344, 2190, 4380, 8760]
+# Average electricity price before the grid fee for the value of stored hydrogen,
+# vs = average_price / EE, Eq. (17). Remove this line to use the mean of the price series.
+average_price = 42.945314207650156        # [PE-bar] EUR/MWh_el
+
+
+[solver]
+# Relative MIP gap of the strategic model; 0 = solve to proven optimality.
+mip_gap = 0.0

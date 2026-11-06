@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article and this software version."
+title: "Wind-hydrogen foresight models"
+type: software
+version: "1.0.0"
+license: MIT
+abstract: >-
+  Strategic MILP and tactical block-wise LP models for sizing and operating a
+  hydrogen system attached to a grid-connected wind farm under limited foresight.
+keywords:
+  - wind-hydrogen system
+  - electrolysis
+  - foresight horizon
+  - mixed-integer linear programming
+authors:
+  - family-names: Zarske
+    given-names: Artur
+    affiliation: Uppsala University
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # TODO: add and uncomment
+  - family-names: Samuelsson
+    given-names: Björn
+    affiliation: Uppsala University; Luleå University of Technology
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # TODO: add and uncomment
+# repository-code: "https://github.com/USERNAME/wind-h2-foresight"   # TODO

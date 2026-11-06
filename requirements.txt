@@ -1,0 +1,4 @@
+gurobipy>=13,<14
+numpy
+pandas
+CoolProp

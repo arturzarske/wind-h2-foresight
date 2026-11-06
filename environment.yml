@@ -1,0 +1,11 @@
+name: wind-h2-foresight
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - pip
+  - pip:
+      - gurobipy>=13,<14
+      - CoolProp
